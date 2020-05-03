@@ -1,9 +1,9 @@
 
 public class PhoneUtils {
 
-    private static boolean bruteDuplicateCheck(Phone singleElement, Phone[] xElement) {
-        for (int i = 0; i < xElement.length; i++) {
-            if (singleElement.equals(xElement[i])) {
+    private static boolean bruteDuplicateCheck(Phone tempElement, Phone[] table) {
+        for (int i = 0; i < table.length; i++) {
+            if (tempElement.equals(table[i])) {
                 return true;
             }
         }
@@ -16,15 +16,13 @@ public class PhoneUtils {
         do {
             System.out.println("Wprowadz element nr: " + (i + 1));
             Phone tempElement = new PhoneCreate().create();
-            if (i != 0) {
-                if (bruteDuplicateCheck(tempElement, phones)) {
-                    System.out.println("Podany element juz istnieje");
-                    continue;
-                }
+            if (bruteDuplicateCheck(tempElement, phones)) {
+                System.out.println("Podany element juz istnieje");
+                continue;
             } else {
                 phones[i] = tempElement;
+                i++;
             }
-            i++;
         } while (i <= tableSize - 1);
     }
 }
