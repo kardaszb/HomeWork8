@@ -1,3 +1,5 @@
+package uniqueTable;
+
 import java.util.Scanner;
 
 public class PhoneCreate {

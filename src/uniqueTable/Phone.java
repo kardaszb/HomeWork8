@@ -1,3 +1,5 @@
+package uniqueTable;
+
 public class Phone {
     private String model;
     private int price;
